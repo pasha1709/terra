@@ -1,0 +1,53 @@
+.newsletter-section { padding: 0 var(--gutter) 64px; background: #382c3e; }
+.newsletter-panel { position: relative; display: grid; grid-template-columns: minmax(0, 48fr) minmax(0, 52fr); align-items: center; gap: 30px; overflow: hidden; isolation: isolate; color: #f1eaf2; padding: clamp(40px, 4.8vw, 90px) clamp(28px, 4vw, 76px); }
+.newsletter-content { position: relative; z-index: 2; min-width: 0; }
+.newsletter-content .eyebrow { font-weight: 400; font-size: 12px; margin-bottom: 24px; letter-spacing: 4px; }
+.newsletter-content h2 { font: 400 clamp(42px, 4.7vw, 90px)/1.07 var(--serif); letter-spacing: -.065em; margin: 0 0 26px; }
+.newsletter-content h2 span { display: block; }
+.newsletter-description { margin: 0 0 28px; color: #d3c8d9; font-size: clamp(17px, 1.5vw, 27px); line-height: 1.5; }
+.newsletter-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 11px; }
+.newsletter-form input { width: 100%; min-width: 0; min-height: 62px; border: 1px solid var(--lavender); border-radius: 12px; padding: 16px 20px; font: 400 18px/1.5 var(--sans); color: var(--plum); background: var(--lavender); }
+.newsletter-form input::placeholder { color: #84758c; opacity: 1; }
+.newsletter-form button { display: flex; justify-content: center; align-items: center; gap: 14px; min-height: 62px; border: 1px solid #d5d99b; border-radius: 12px; padding: 16px 22px; background: #d5d99b; color: var(--plum); font: 400 17px/1.5 var(--sans); transition: background-color .18s; white-space: nowrap; }
+.newsletter-form button:hover:not(:disabled) { background: #e1e4ad; }
+.newsletter-form button:disabled { cursor: default; }
+.newsletter-form .arrow { width: 24px; height: 22px; flex: 0 0 24px; }
+.newsletter-consent { margin: 18px 0 0; max-width: 500px; color: #cbbfd1; font-size: 13px; line-height: 1.6; }
+.newsletter-consent a { text-decoration: underline; text-underline-offset: 3px; }
+.newsletter-consent a[href]:hover { color: #d5d99b; }
+.newsletter-panel :focus-visible { outline: 2px solid #d5d99b; outline-offset: 4px; }
+.newsletter-panel button:focus-visible { outline-color: var(--lavender); }
+.newsletter-error, .newsletter-status { color: #e1d5e6; font-size: 14px; line-height: 1.5; margin: 12px 0 0; }
+.newsletter-status:empty { display: none; }
+.newsletter-collage { position: relative; min-width: 0; width: 100%; aspect-ratio: .96; }
+.newsletter-postcard { position: absolute; display: block; border-radius: 22px; border: 1px solid rgb(245 238 246 / 85%); box-shadow: 0 8px 24px rgb(15 8 20 / 16%); object-fit: cover; }
+.newsletter-postcard-vase { width: 53%; height: 79%; top: -4%; left: 1%; transform: rotate(-10deg); object-position: 50% 55%; }
+.newsletter-postcard-cups { width: 47%; height: 51%; top: 4%; right: -1%; transform: rotate(10deg); object-position: 50% 62%; }
+.newsletter-postcard-candle { z-index: 1; width: 73%; height: 39%; bottom: -1%; right: -1%; transform: rotate(10deg); object-position: 50% 48%; }
+@media(max-width:1199px) {
+  .newsletter-panel { padding: 48px 32px; gap: 24px; }
+  .newsletter-content h2 { font-size: clamp(38px, 4.6vw, 55px); }
+  .newsletter-description { font-size: 17px; }
+  .newsletter-form input { padding-inline: 14px; font-size: 16px; }
+  .newsletter-form button { padding-inline: 15px; font-size: 15px; gap: 10px; }
+  .newsletter-collage { align-self: center; }
+}
+@media(max-width:900px) {
+  .newsletter-panel { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  .newsletter-content { width: 100%; max-width: 620px; }
+  .newsletter-content h2 { font-size: clamp(44px, 7vw, 62px); }
+  .newsletter-collage { width: min(100%, 600px); aspect-ratio: 1.1; justify-self: center; }
+}
+@media(max-width:600px) {
+  .newsletter-section { padding: 0 20px 40px; }
+  .newsletter-panel { padding: 36px 22px 42px; gap: 38px; }
+  .newsletter-content .eyebrow { font-size: 10px; letter-spacing: 3px; margin-bottom: 22px; }
+  .newsletter-content h2 { font-size: clamp(34px, 8.9vw, 48px); margin-bottom: 22px; }
+  .newsletter-description { font-size: 16px; line-height: 1.55; margin-bottom: 24px; }
+  .newsletter-form { grid-template-columns: minmax(0, 1fr); }
+  .newsletter-form input, .newsletter-form button { min-height: 58px; font-size: 17px; }
+  .newsletter-consent { font-size: 12px; }
+  .newsletter-postcard { border-radius: 16px; }
+  .newsletter-collage { aspect-ratio: .95; }
+}
+@media(prefers-reduced-motion:reduce) { .newsletter-form button { transition: none; } }

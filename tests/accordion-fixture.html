@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TERRA — тест компонента Accordion</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../care.css">
+</head>
+<body>
+  <main style="max-width: 850px; margin: auto; padding: 24px">
+    <h2>Проверка аккордеона</h2>
+    <p>Изолированная тестовая страница компонента. Тексты ниже не являются условиями магазина и не используются на главной странице.</p>
+    <div id="fixture-accordion" class="care-accordion"></div>
+  </main>
+  <script type="module">
+    import { mountAccordion } from '../accordion.js';
+    import { careQuestions } from '../care-data.js';
+    const longAnswer = Array.from({ length: 8 }, (_, index) => `Тестовый абзац ${index + 1}. Этот текст проверяет раскрытие длинного ответа, переносы строк и отсутствие обрезания при изменении ширины окна. Условия магазина здесь не задаются.`).join('\n\n');
+    const questions = careQuestions.map((item, index) => ({ ...item, answer: index === 5 ? longAnswer : `Тестовый ответ ${index + 1}. Проверка открытия и закрытия панели.` }));
+    mountAccordion(document.querySelector('#fixture-accordion'), questions, 'order');
+  </script>
+</body>
+</html>

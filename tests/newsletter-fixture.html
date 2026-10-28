@@ -1,0 +1,8 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Тест подписки TERRA</title><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../newsletter.css"></head><body>
+<p>Изолированная проверка: только тестовые адреса, без сетевой передачи данных.</p><label>Тестовый результат <select id="result"><option value="error">Ошибка</option><option value="confirmation_required">Подтверждение</option><option value="subscribed">Подписан</option></select></label><p id="policy">Тестовый адрес политики, не условия магазина.</p><div id="fixture"></div>
+<script type="module">
+import {mountNewsletter} from '../newsletter.js';
+const doc=new DOMParser().parseFromString(await(await fetch('../index.html')).text(),'text/html');
+const section=doc.querySelector('[data-newsletter]');document.querySelector('#fixture').append(section);
+mountNewsletter(section,{privacyUrl:'#policy',subscribe:async()=>{const status=document.querySelector('#result').value;await new Promise(r=>setTimeout(r,600));if(status==='error')throw Error();return {ok:true,status};}});
+</script></body></html>

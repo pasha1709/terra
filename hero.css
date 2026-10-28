@@ -1,0 +1,79 @@
+/* The wide source already contains the lavender text area and its transition. */
+.hero { position: relative; display: grid; grid-template-columns: 44.5% 55.5%; min-height: 100vh; min-height: 100svh; background: var(--lavender); isolation: isolate; margin: 0; }
+.hero .hero-copy { z-index: 1; padding: calc(clamp(52px, 6vh, 88px) + var(--header-height)) 24px clamp(44px, 8vh, 100px) var(--gutter); justify-content: space-between; gap: 20px; }
+.hero .eyebrow { font-size: clamp(14px, 1vw, 16px); font-weight: 400; letter-spacing: 3.3px; margin-bottom: 19px; }
+.hero .primary-button { border-radius: 18px; min-height: clamp(48px, 3.89vw, 56px); padding: clamp(10px, .833vw, 12px) clamp(22px, 1.875vw, 27px) clamp(10px, .833vw, 12px) clamp(26px, 2.222vw, 32px); gap: clamp(18px, 1.458vw, 21px); font-size: clamp(14.4px, 1.167vw, 16.8px); }
+.hero .arrow { width: 25px; height: 20px; }
+.hero h1 { font-size: clamp(41px, 4.37vw, 79px); line-height: 1.04; max-width: 100%; margin-bottom: 18px; }
+.hero h1 span { white-space: normal; }
+@media (min-width: 961px) {
+  .hero #hero-title.display-heading span { display: block; }
+}
+.hero .hero-description { padding-right: 0; font-size: clamp(13px, 1.12vw, 16px); max-width: min(430px, 30vw); margin-bottom: 26px; }
+.hero .hero-actions { gap: 16px; }
+.hero .text-link { font-size: 14.4px; gap: 19px; }
+.hero .benefits { font-size: 17px; font-weight: 400; color: var(--plum); margin-top: 26px; gap: 22px; width: 100%; max-width: 490px; }
+.hero .benefits li { min-width: 0; flex: 1; min-height: 32px; gap: 10px; white-space: normal; line-height: 1.35; }
+.hero .benefits li + li { padding-left: 22px; }
+.hero .benefit-icon { width: 26px; height: 28px; flex-shrink: 0; }
+.hero .box-icon { width: 24px; height: 27px; }
+.hero .hero-visual { position: absolute; inset: var(--header-height) 0 0; isolation: isolate; min-width: 0; min-height: 0; margin: 0; padding: 0; overflow: hidden; }
+.hero .hero-image {
+  position: absolute;
+  inset: auto 0 0;
+  left: auto;
+  width: auto;
+  height: 100%;
+  max-height: calc(100vw * 899 / 1550);
+  object-fit: contain;
+  object-position: right bottom;
+  mask-image: none;
+}
+.hero .hero-visual::after { content: ""; position: absolute; inset: auto 0 0; height: clamp(80px, 9vh, 120px); background: linear-gradient(to top,var(--lavender),color-mix(in srgb,var(--lavender) 40%,transparent) 35%,transparent); pointer-events: none; z-index: 0; }
+.hero .product-card { z-index: 1; left: auto; right: 28px; width: min(460px, calc(100% - 48px)); min-height: 52px; gap: 14px; padding: 6px 8px 6px 12px; bottom: clamp(24px, 4vh, 48px); }
+.hero .product-thumbnail { width: 40px; height: 40px; }
+.hero .product-thumbnail img { object-position: 30% 65%; transform: scale(1.7); transform-origin: 8% 50%; }
+.hero .product-card h2 { font-size: clamp(16px, 1.36vw, 21px); }
+.hero .product-price { font-size: 13.6px; }
+.hero .add-button { width: 40px; height: 40px; }
+.hero .add-button .icon { width: 22px; height: 22px; }
+@media (min-width: 961px) {
+  .hero .product-card { left: auto; right: 2vw; width: 36vw; }
+}
+@media (min-width: 1600px) {
+  .hero .product-card { min-height: 64px; padding-block: 8px; bottom: clamp(24px, 4vh, 48px); }
+  .hero .product-thumbnail, .hero .add-button { width: 48px; height: 48px; }
+}
+@media (min-width: 961px) and (max-width: 1199px) {
+  .hero .primary-button { min-height: 48px; padding: 10px 20px; gap: 18px; font-size: 14.4px; }
+}
+@media (max-width: 1199px) {
+  .hero { display: flex; flex-direction: column; min-height: 0; padding-top: var(--header-height); }
+  .hero .hero-copy { padding: 32px var(--gutter) 24px; justify-content: flex-start; gap: 0; }
+  .hero .hero-description { max-width: 430px; }
+  .hero h1 { font-size: clamp(39px, 6.58vw, 60px); }
+  .hero .hero-visual { position: relative; inset: auto; width: 100%; aspect-ratio: 1050 / 899; }
+  .hero .hero-image { inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: 100% 50%; mask-image: none; }
+}
+@media (max-width: 760px) { .hero .hero-visual::after { height: 64px; } }
+@media (max-width: 600px) {
+  .hero .hero-visual::after { bottom: 78px; }
+  /* Reserve a separate row so the fixed-size product card cannot hide the bases. */
+  .hero .hero-visual { aspect-ratio: auto; padding-top: calc(100% * 899 / 1050); padding-bottom: 78px; }
+  .hero .hero-image { height: calc(100% - 78px); }
+  .hero h1 { font-size: clamp(35px, 10.05vw, 49px); }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 2.2px; margin-bottom: 17px; }
+  .hero .hero-description { font-size: 14px; margin-bottom: 22px; }
+  .hero .primary-button { min-height: 48px; padding: 10px 21px; gap: 20px; font-size: 14.4px; }
+  .hero .hero-actions { gap: 14px; }
+  .hero .text-link { font-size: 13px; gap: 16px; }
+  .hero .benefits { font-size: 15px; margin-top: 26px; gap: 16px; }
+  .hero .benefits li { gap: 8px; }
+  .hero .benefits li + li { padding-left: 16px; }
+  .hero .benefit-icon { width: 24px; height: 28px; }
+  .hero .product-card { left: 12px; right: 12px; width: auto; gap: 9px; padding: 8px; min-height: 62px; bottom: clamp(24px, 4vh, 48px); }
+  .hero .product-thumbnail { width: 42px; height: 46px; }
+  .hero .product-card h2 { font-size: 15px; }
+  .hero .product-price { font-size: 12px; }
+  .hero .add-button { width: 44px; height: 44px; }
+}

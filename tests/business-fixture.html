@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TERRA — тест формы B2B</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../business.css">
+</head>
+<body>
+  <main style="padding: 24px; max-width: 800px">
+    <h2>Изолированная проверка формы B2B</h2>
+    <p>Только тестовые данные. Адаптер ниже работает в памяти: сетевых запросов с данными формы нет. Он не подключён к магазину.</p>
+    <label for="fixture-result">Ответ тестового адаптера</label>
+    <select id="fixture-result"><option value="error">Ошибка</option><option value="accepted">Принято</option></select>
+    <button type="button" id="fixture-open">Открыть тестовую форму</button>
+    <p id="fixture-count" role="status">Вызовов адаптера: 0</p>
+    <h3 id="fixture-policy">Тестовая ссылка для проверки доступности</h3>
+    <p>Этот фрагмент не является политикой магазина.</p>
+  </main>
+  <script type="module">
+    import { mountBusinessDialog } from '../business-dialog.js';
+    const source = new DOMParser().parseFromString(await (await fetch('../index.html')).text(), 'text/html');
+    const dialog = source.querySelector('.business-dialog');
+    document.body.append(dialog);
+    let calls = 0;
+    const controller = mountBusinessDialog(dialog, {
+      privacyUrl: '#fixture-policy',
+      consent: { label: 'Тестовое согласие: только для проверки компонента', required: true },
+      async submit() {
+        document.querySelector('#fixture-count').textContent = `Вызовов адаптера: ${++calls}`;
+        const accepted = document.querySelector('#fixture-result').value === 'accepted';
+        await new Promise(resolve => setTimeout(resolve, 700));
+        if (!accepted) throw new Error('Test rejection');
+        return { ok: true };
+      },
+    });
+    document.querySelector('#fixture-open').addEventListener('click', event => controller.open('project', event.currentTarget));
+  </script>
+</body>
+</html>

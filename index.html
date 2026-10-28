@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e1ea">
+  <meta name="description" content="TERRA — керамика ручной работы. Скульптурные вазы и посуда с выразительной фактурой.">
+  <title>TERRA — керамика ручной работы</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="collections-gallery.css">
+  <link rel="stylesheet" href="inspiration.css">
+  <link rel="stylesheet" href="olive.css">
+  <link rel="stylesheet" href="handmade.css">
+  <link rel="stylesheet" href="care.css">
+  <link rel="stylesheet" href="business.css">
+  <link rel="stylesheet" href="newsletter.css">
+  <link rel="stylesheet" href="display-typography.css">
+  <link rel="preload" href="assets/fonts/caveat-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <script type="module" src="app.js"></script>
+  <script type="module" src="collections-gallery.js"></script>
+  <script type="module" src="inspiration.js"></script>
+  <script type="module" src="olive.js"></script>
+  <script type="module" src="care.js"></script>
+  <script type="module" src="business.js"></script>
+  <script type="module" src="newsletter.js"></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 32 24"><path d="M2 12h26M20 4l8 8-8 8"/></symbol>
+    <symbol id="search" viewBox="0 0 28 28"><circle cx="12" cy="12" r="8.5"/><path d="m18.5 18.5 6 6"/></symbol>
+    <symbol id="bag" viewBox="0 0 28 30"><path d="M5 9h18l2 19H3L5 9Z"/><path d="M9 12V6a5 5 0 0 1 10 0v6"/></symbol>
+    <symbol id="box" viewBox="0 0 32 36"><path d="m3 10 13-7 13 7v16l-13 8L3 26V10Zm0 0 13 8 13-8M16 18v16M9 6l13 8M9 14l13-8"/></symbol>
+    <symbol id="hand" viewBox="0 0 36 42"><path d="M10 21V10a2 2 0 0 1 4 0v11-15a2 2 0 0 1 4 0v15-17a2 2 0 0 1 4 0v17-13a2 2 0 0 1 4 0v18l4-6a2.5 2.5 0 0 1 4 3l-6 12c-2 4-6 6-10 6-7 0-11-5-11-11V16a2 2 0 0 1 4 0M14 39v2h10v-3"/></symbol>
+    <symbol id="plus" viewBox="0 0 28 28"><path d="M14 4v20M4 14h20"/></symbol>
+    <symbol id="menu" viewBox="0 0 28 28"><path d="M4 8h20M4 14h20M4 20h20"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="TERRA — на главную">
+      <span class="brand-name">TERRA</span>
+      <span class="brand-caption">OBJECTS<br>&amp; ATELIER</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a data-destination="catalog">Каталог</a>
+      <a data-destination="newArrivals">Новая коллекция</a>
+      <a data-destination="atelier">О мастерской</a>
+      <a data-destination="delivery">Доставка</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button search-button" type="button" data-destination="search" aria-label="Поиск по магазину">
+        <svg class="icon" aria-hidden="true"><use href="#search"/></svg>
+      </button>
+      <span class="header-divider" aria-hidden="true"></span>
+      <button class="cart-button" type="button" data-destination="cart" aria-label="Открыть корзину, 0 товаров">
+        <svg class="icon bag-icon" aria-hidden="true"><use href="#bag"/></svg>
+        <span class="cart-label">Корзина (<span data-cart-count>0</span>)</span>
+        <span class="mobile-cart-count" aria-hidden="true">0</span>
+      </button>
+      <button class="icon-button menu-toggle" type="button" aria-label="Открыть меню" aria-controls="mobile-navigation" aria-expanded="false">
+        <svg class="icon" aria-hidden="true"><use href="#menu"/></svg>
+      </button>
+    </div>
+    <nav id="mobile-navigation" class="mobile-nav" aria-label="Мобильная навигация" hidden>
+      <a data-destination="catalog">Каталог</a>
+      <a data-destination="newArrivals">Новая коллекция</a>
+      <a data-destination="atelier">О мастерской</a>
+      <a data-destination="delivery">Доставка</a>
+      <button class="mobile-search" type="button" data-destination="search" aria-label="Поиск по магазину">Поиск<svg class="icon" aria-hidden="true"><use href="#search"/></svg></button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Керамика ручной работы</p>
+        <h1 id="hero-title" class="display-heading"><span>Предметы,</span> <span>которые меняют</span> <span>ощущение дома.</span></h1>
+        <p class="hero-description">Скульптурные вазы и посуда с выразительной фактурой. Найдите свой акцент для интерьера.</p>
+        <div class="hero-actions">
+          <a class="primary-button" data-destination="catalog">Выбрать керамику<svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+        <ul class="benefits" aria-label="Наши преимущества">
+          <li><svg class="benefit-icon" aria-hidden="true"><use href="#hand"/></svg><span>Ручная работа</span></li>
+          <li><svg class="benefit-icon box-icon" aria-hidden="true"><use href="#box"/></svg><span>Надёжная упаковка</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-image" data-hero-image alt="Оливковая глянцевая ваза с веткой и белая фактурная чаша на каменном постаменте" hidden>
+        <div class="photo-placeholder" data-photo-placeholder role="img" aria-label="Место для фотографии коллекции керамики">
+          <span class="placeholder-rule" aria-hidden="true"></span>
+          <p>Фотография коллекции</p>
+          <span>Ваза Forma 04 и фактурная чаша</span>
+          <small>Изображение пока не добавлено</small>
+        </div>
+        <article class="product-card" aria-label="Ваза Forma 04, 6 400 рублей">
+          <div class="product-thumbnail">
+            <img data-product-image alt="Ваза Forma 04" hidden>
+            <span class="thumbnail-placeholder" data-thumbnail-placeholder aria-hidden="true">T.</span>
+          </div>
+          <h2>Ваза Forma 04</h2>
+          <p class="product-price">6 400 ₽</p>
+          <button class="add-button" type="button" aria-label="Добавить вазу Forma 04 в корзину" aria-describedby="cart-integration-note">
+            <svg class="icon" aria-hidden="true"><use href="#plus"/></svg>
+          </button>
+        </article>
+        <span class="sr-only" id="cart-integration-note">Покупка будет доступна после подключения корзины.</span>
+      </div>
+    </section>
+    <section id="collections" class="categories" aria-labelledby="categories-title">
+      <div class="categories-heading">
+        <p class="eyebrow">Коллекции TERRA</p>
+        <h2 id="categories-title" class="display-heading">Найдите свой предмет</h2>
+        <p class="categories-intro">Керамика для ваших повседневных ритуалов</p>
+      </div>
+      <div class="terra-gallery" data-terra-gallery role="region" aria-label="Галерея керамики TERRA" aria-describedby="gallery-help">
+        <p class="sr-only" id="gallery-help">Галерея из 11 фотографий керамики TERRA. При уменьшении движения в настройках устройства доступно ручное горизонтальное перелистывание.</p>
+        <div class="terra-gallery-stage">
+          <ul class="terra-gallery-track" aria-label="11 предметных фотографий">
+            <li class="terra-gallery-panel"><img src="assets/gallery/cobalt-vase.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Кобальтовая скульптурная ваза с волнистой поверхностью и цветущей веткой"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/peach-bowl.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Персиковая керамическая чаша с неровным краем на светлом камне"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/painted-tableware.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Светлая посуда с бордовыми мазками и горчичная чашка"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/celadon-teapot.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Селадоновый чайник с бамбуковой ручкой и крапчатой глазурью"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/ritual-cups.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Розовая и тёмно-синяя керамические чашки с фактурной глазурью"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/burgundy-candle.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Бордовый витой подсвечник с тонкой зажжённой свечой"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/incense-holder.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Голубая волнистая подставка для благовоний на каменном постаменте"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/ring-vase.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Светло-оливковая скульптурная ваза с круглым отверстием"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/pastel-coffee.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Сиреневая чашка на блюдце и жёлтая чашка с кофе"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/burgundy-pitcher.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Бордовый глазурованный керамический кувшин с ручкой"></li>
+            <li class="terra-gallery-panel"><img src="assets/gallery/ochre-jar.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt="Охристая керамическая банка с округлой крышкой"></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/cobalt-vase.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/peach-bowl.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/painted-tableware.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/celadon-teapot.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/ritual-cups.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/burgundy-candle.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/incense-holder.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/ring-vase.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/pastel-coffee.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/burgundy-pitcher.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+            <li class="terra-gallery-panel" data-gallery-clone aria-hidden="true" inert tabindex="-1"><img src="assets/gallery/ochre-jar.png" width="1024" height="1536" loading="lazy" decoding="async" draggable="false" alt=""></li>
+          </ul>
+        </div>
+      </div>
+      <div class="terra-gallery-catalog"><a data-destination="catalog">Смотреть каталог<svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    </section>
+    <section id="in-life" class="life-section" aria-labelledby="life-title" aria-roledescription="карусель">
+      <div class="life-viewport" data-scenes aria-label="Интерьеры TERRA"></div>
+      <div class="life-heading">
+        <p class="eyebrow">Вдохновение для дома</p>
+        <h2 id="life-title" class="display-heading"><span>Предметы в</span> <span>вашей жизни</span></h2>
+        <p class="life-intro">От первого кофе до тихого вечера.</p>
+        <nav class="life-rooms" aria-label="Выбрать комнату" data-life-rooms></nav>
+      </div>
+      <aside class="life-aside" aria-label="Предметы в выбранной комнате">
+        <div class="life-products" data-life-products></div>
+      </aside>
+      <div class="life-controls">
+        <div class="life-progress" data-life-progress aria-label="Выбрать сцену"></div>
+        <button type="button" class="life-pause" data-life-pause aria-pressed="false" aria-label="Приостановить автопереключение"><span aria-hidden="true">Ⅱ</span></button>
+      </div>
+      <p class="sr-only" data-life-status role="status" aria-live="polite"></p>
+      <noscript><p>Для выбора комнат включите JavaScript.</p></noscript>
+    </section>
+    <section id="handmade" class="handmade-section" aria-labelledby="handmade-title">
+      <div class="handmade-heading">
+        <div class="handmade-intro">
+          <p class="eyebrow">TERRA · КЕРАМИКА С ХАРАКТЕРОМ</p>
+          <h2 id="handmade-title" class="display-heading">Характер<br>ручной работы</h2>
+          <p class="handmade-subtitle">Красота, которую можно почувствовать.</p>
+        </div>
+      </div>
+      <ol class="handmade-grid">
+        <li class="handmade-item">
+          <div class="handmade-photo handmade-photo-texture">
+            <img src="assets/handmade/texture.png" width="1254" height="1254" loading="lazy" decoding="async" alt="Неглазурованная глиняная ваза с волнистым рельефом на гончарном круге, рядом инструменты и глиняная стружка">
+          </div>
+          <h3>Живая фактура</h3>
+          <p>Естественные неровности и уникальные следы формы.</p>
+        </li>
+        <li class="handmade-item">
+          <div class="handmade-photo handmade-photo-glazes">
+            <img src="assets/handmade/glazes.png" width="1254" height="1254" loading="lazy" decoding="async" alt="Кобальтовая ваза и терракотовый кувшин с образцами глазури синего, терракотового, горчичного, селадонового и бордового цветов">
+          </div>
+          <h3>Цвет и характер</h3>
+          <p>Глубокие, сложные оттенки, которые оживают в глазури.</p>
+        </li>
+        <li class="handmade-item">
+          <div class="handmade-photo handmade-photo-details">
+            <img src="assets/handmade/details.png" width="1254" height="1254" loading="lazy" decoding="async" alt="Крупный план селадоновой чашки: светлая кракелюрная глазурь, тонкий край и округлая ручка на фоне синей керамики">
+          </div>
+          <h3>Внимание к деталям</h3>
+          <p>Продуманные формы и аккуратные акценты.</p>
+        </li>
+        <li class="handmade-item">
+          <div class="handmade-photo handmade-photo-packaging">
+            <img src="assets/handmade/packaging.png" width="1254" height="1254" loading="lazy" decoding="async" alt="Бордовый керамический объект с волнистым основанием в открытой коробке, защищённый белой бумагой и сотовой крафтовой упаковкой">
+          </div>
+          <h3>Бережная упаковка</h3>
+          <p>Надёжная защита для долгой истории каждого предмета.</p>
+        </li>
+      </ol>
+    </section>
+    <section id="olive-chalk" class="olive-section" aria-labelledby="olive-title">
+      <div class="olive-panel" data-olive-banner>
+        <div class="olive-background" data-olive-background hidden>
+          <img data-olive-background-image width="1866" height="843" loading="lazy" decoding="async" alt="Оливковый кувшин с ветками и светлый арочный подсвечник на сервированном столе в тёплом солнечном свете">
+        </div>
+        <div class="olive-copy">
+          <p class="olive-badge">Коллекция TERRA</p>
+          <h2 id="olive-title" class="display-heading" data-olive-title>Олива и мел</h2>
+          <p class="olive-subtitle" data-olive-subtitle>Два характера — одно настроение дома.</p>
+          <p class="olive-description" data-olive-description>Оливковая глазурь и светлая глина для выразительных деталей интерьера.</p>
+          <a class="olive-collection-link">Смотреть коллекцию<svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+        <nav class="olive-products" data-olive-products aria-label="Предметы коллекции Олива и мел"></nav>
+      </div>
+    </section>
+    <section id="customer-care" class="care-section" aria-labelledby="care-title">
+      <div class="care-heading">
+        <div class="care-copy">
+          <p class="eyebrow">ПОКУПАТЕЛЯМ</p>
+          <h2 id="care-title" class="display-heading">С заботой о вашей покупке</h2>
+        </div>
+        <div class="care-contact">
+          <p>Остались вопросы?<br>Напишите нам — мы рядом.</p>
+          <a class="care-contact-link" data-care-contact role="link" aria-disabled="true">Написать нам<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M5 4h11v11"/></svg></a>
+        </div>
+      </div>
+      <figure class="care-photo">
+        <img src="assets/care/packed-cup-panorama.png" width="2045" height="769" loading="lazy" decoding="async" alt="Коробка с кобальтовой кружкой и защитной упаковкой в центре стола, эвкалипт слева, персиковые тарелки и лавандовая ткань справа">
+      </figure>
+      <div class="care-groups">
+        <section class="care-group" aria-labelledby="care-order-title">
+          <h3 id="care-order-title" class="care-group-title"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 5h5l5 22h20l5-17H10M15 33a2.5 2.5 0 1 0 0 .1M30 33a2.5 2.5 0 1 0 0 .1"/></svg>Заказ</h3>
+          <div id="care-order-accordion" class="care-accordion" data-care-accordion="order"></div>
+        </section>
+        <section class="care-group" aria-labelledby="care-delivery-title">
+          <h3 id="care-delivery-title" class="care-group-title"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 29V9a4 4 0 0 1 4-4h17v24M25 14h7l5 8v7h-5M4 29h4m8 0h8M25 21h12"/><circle cx="12" cy="30" r="4"/><circle cx="28" cy="30" r="4"/></svg>Доставка</h3>
+          <div id="care-delivery-accordion" class="care-accordion" data-care-accordion="delivery"></div>
+        </section>
+        <section class="care-group" aria-labelledby="care-aftercare-title">
+          <h3 id="care-aftercare-title" class="care-group-title"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M18 37c0-15 7-25 17-32-1 15-6 20-16 19M18 30C7 29 5 23 5 12c10 2 14 7 13 18"/></svg>После покупки</h3>
+          <div id="care-aftercare-accordion" class="care-accordion" data-care-accordion="aftercare"></div>
+        </section>
+      </div>
+    </section>
+    <section id="business" class="business-section" aria-labelledby="business-title">
+      <div class="business-backdrop"><img src="assets/business/restaurant-panorama.png" width="1774" height="887" loading="lazy" decoding="async" alt="Ресторанный стол с синей вазой, горчичной чашкой, тарелками с бордовыми мазками и бокалами"></div>
+      <div class="business-panel">
+        <div class="business-copy">
+          <p class="eyebrow">TERRA для бизнеса</p>
+          <h2 id="business-title" class="display-heading"><span>Предметы, которые</span> <span>подчеркнут характер</span> <span>вашего пространства</span></h2>
+          <p class="business-description">Подберём керамику для ресторанов, отелей<br class="business-wide-break"> и интерьерных проектов — под вашу концепцию<br class="business-wide-break"> и задачи.</p>
+          <ol class="business-audience">
+            <li><span aria-hidden="true">01</span>Ресторанам и кафе</li>
+            <li><span aria-hidden="true">02</span>Отелям и апартаментам</li>
+            <li><span aria-hidden="true">03</span>Дизайнерам интерьера</li>
+          </ol>
+          <div class="business-actions">
+            <button class="primary-button business-primary" type="button" data-business-action="project">Обсудить проект<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button>
+            <button class="business-catalogue" type="button" data-business-action="catalogue"><span>Запросить каталог</span><svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section id="newsletter" class="newsletter-section" data-newsletter aria-labelledby="newsletter-title">
+      <div class="newsletter-panel">
+        <div class="newsletter-content">
+          <p class="eyebrow">Письма TERRA</p>
+          <h2 id="newsletter-title" class="display-heading"><span>Красивые вещи</span> <span>первыми —</span> <span>для вас</span></h2>
+          <p class="newsletter-description">Коллекции, сочетания и детали,<br>которые хочется сохранить</p>
+          <form class="newsletter-form" novalidate>
+            <label class="sr-only" for="newsletter-email">Ваш email</label>
+            <input id="newsletter-email" type="email" name="email" autocomplete="email" placeholder="Ваш email" required maxlength="254" aria-describedby="newsletter-error newsletter-status">
+            <button type="submit"><span>Подписаться</span><svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
+          </form>
+          <p class="newsletter-error" id="newsletter-error" data-newsletter-error hidden></p>
+          <p class="newsletter-consent">Нажимая «Подписаться», вы соглашаетесь с <a data-newsletter-policy role="link" aria-disabled="true">Политикой конфиденциальности</a>.</p>
+          <p class="newsletter-status" id="newsletter-status" data-newsletter-status role="status" aria-live="polite"></p>
+        </div>
+        <div class="newsletter-collage" aria-label="Керамика TERRA">
+          <img class="newsletter-postcard newsletter-postcard-vase" src="assets/newsletter/pink-sculptural-vase.png" width="1024" height="1536" loading="lazy" decoding="async" alt="Розовая скульптурная ваза с двумя горлышками на каменном постаменте">
+          <img class="newsletter-postcard newsletter-postcard-cups" src="assets/newsletter/burgundy-cups.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Две бордовые чашки с кофе на жёлтом подносе рядом с лавандовой тканью">
+          <img class="newsletter-postcard newsletter-postcard-candle" src="assets/newsletter/terracotta-candle.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Терракотовый скульптурный подсвечник и голубое блюдце на светлом камне">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="business-dialog" class="business-dialog" aria-labelledby="business-dialog-title">
+    <button class="business-dialog-close" type="button" data-business-close aria-label="Закрыть форму"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <h2 id="business-dialog-title" data-business-dialog-title>Обсудим ваш проект</h2>
+    <form novalidate>
+      <fieldset class="business-fields" aria-label="Контактные данные и проект">
+        <div class="business-field"><label for="business-name">Имя</label><input id="business-name" name="name" autocomplete="name" maxlength="100" required autofocus aria-describedby="business-name-error"><p id="business-name-error" class="business-field-error" data-error="name" hidden></p></div>
+        <div class="business-field"><label for="business-contact">Email или телефон для связи</label><input id="business-contact" name="contact" type="text" autocomplete="email" maxlength="254" required aria-describedby="business-contact-error"><p id="business-contact-error" class="business-field-error" data-error="contact" hidden></p></div>
+        <div class="business-field"><label for="business-type">Тип проекта</label><select id="business-type" name="projectType" aria-describedby="business-type-error"><option value="">Выберите тип проекта</option value="restaurant">Ресторан</option><option value="hotel">Отель</option><option value="design">Дизайн-бюро</option><option value="other">Другое</option></select><p id="business-type-error" class="business-field-error" data-error="projectType" hidden></p></div>
+        <div class="business-field"><label for="business-description">Описание задачи · необязательно</label><textarea id="business-description" name="description" rows="3" maxlength="2000" aria-describedby="business-description-error"></textarea><p id="business-description-error" class="business-field-error" data-error="description" hidden></p></div>
+        <div class="business-consent" data-business-consent hidden><label><input name="consent" type="checkbox" aria-describedby="business-consent-error"><span data-consent-label></span></label><p id="business-consent-error" class="business-field-error" data-error="consent" hidden></p></div>
+      </fieldset>
+      <div class="business-form-footer">
+        <a class="business-privacy" data-business-privacy hidden>Политика обработки данных</a>
+        <p class="business-status" data-business-status role="status" aria-live="polite"></p>
+        <button class="primary-button business-submit" type="submit">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="olive-toast" hidden aria-hidden="true"></div>
+
+  <dialog class="availability-dialog" aria-labelledby="availability-title" aria-describedby="availability-description">
+    <h2 id="availability-title">Скоро в TERRA</h2>
+    <p id="availability-description"></p>
+    <form method="dialog"><button class="primary-button" autofocus>Понятно<svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></button></form>
+  </dialog>
+  <p class="sr-only" data-announcement role="status" aria-live="polite"></p>
+</body>
+</html>

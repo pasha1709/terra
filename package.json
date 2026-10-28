@@ -1,0 +1,11 @@
+{
+  "name": "terra",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node --check app.js && node --check collections-gallery.js && node --check gallery-geometry.js && node --check header-scroll.js && node --check integrations.js && node --check scripts/serve.mjs && node --check inspiration.js && node --check scene-timeline.js && node --check scenes.js && node --check scene-geometry.js && node --check olive.js && node --check olive-data.js && node --check olive-commerce.js && node --check care.js && node --check care-data.js && node --check accordion.js && node --check accordion-state.js && node --check business.js && node --check business-form.js && node --check business-dialog.js && node --check newsletter.js && node --check newsletter-form.js",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
