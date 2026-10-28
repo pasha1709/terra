@@ -90,6 +90,5 @@
   .handmade-atelier-link { transition: none; }
 }
 
-/* Keep the slider fade flush with the new lavender section below it. */
-.life-section + .handmade-section { position: relative; margin-top: -1px; }
-.life-section + .handmade-section::before { content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 3px; background: var(--lavender); pointer-events: none; }
+/* Disable only the preceding slider fade at the handmade section boundary. */
+.life-section:has(+ .handmade-section)::before { display: none; }
