@@ -1,0 +1,15 @@
+/* Scoped animation units only. Existing line wrappers, whitespace and fonts stay. */
+[data-blur-reveal] { overflow: visible; }
+[data-blur-reveal] span.blur-reveal-word,
+[data-blur-reveal] span.blur-reveal-unit {
+  display: inline-block !important;
+  white-space: pre !important;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  overflow: visible;
+}
+/* Restore native text DOM on completion; this also avoids persistent compositor layers. */
+@media (prefers-reduced-motion: reduce) {
+  [data-blur-reveal], [data-blur-reveal] .blur-reveal-unit { opacity: 1 !important; filter: none !important; transform: none !important; }
+}
