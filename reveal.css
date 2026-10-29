@@ -1,8 +1,0 @@
-/* Words stay inline: no changes to line breaks, spacing or Caveat shaping.
-   Word reveals use opacity; group reveals also use independent translate,
-   preserving gallery transforms and the newsletter postcard rotations. */
-#main .display-heading span.reveal-word,
-.hero #hero-title.display-heading span.reveal-word {
-  display: inline;
-  white-space: normal;
-}

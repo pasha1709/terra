@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mountReveal } from '../reveal.js';
+import { mountReveal, revealHeadings, revealDescriptions, revealLabels, revealHero } from '../reveal.js';
 
 test('reveals once, preserves existing transforms, and cancels on reduced motion', () => {
   const original = { matchMedia: globalThis.matchMedia, Element: globalThis.Element, IntersectionObserver: globalThis.IntersectionObserver };
@@ -15,7 +15,7 @@ test('reveals once, preserves existing transforms, and cancels on reduced motion
     return animation;
   }, contains: target => target === element };
   const listeners = {};
-  const root = { querySelectorAll: selector => selector === '.terra-gallery, #in-life, .care-photo, .newsletter-collage' ? [element] : [], addEventListener: (type, listener) => { listeners[type] = listener; } };
+  const root = { querySelectorAll: selector => selector === revealHeadings ? [element] : [], addEventListener: (type, listener) => { listeners[type] = listener; } };
   try {
     globalThis.matchMedia = query => query.includes('reduced-motion') ? motion : { matches: false };
     globalThis.Element = class { animate() {} };
@@ -33,7 +33,7 @@ test('reveals once, preserves existing transforms, and cancels on reduced motion
     observed.callback([{ target: element, isIntersecting: true }]);
     assert.equal(animations.length, 1, 'returning to the section cannot replay it');
     assert.equal(animations[0].options.duration, 720);
-    assert.equal(animations[0].frames[0].translate, '0 20px');
+    assert.equal(animations[0].frames[0].translate, '0 16px');
     assert.ok(!('transform' in animations[0].frames[0]));
     assert.equal(animations[0].options.fill, 'backwards', 'no retained final style');
     listeners.focusin({ target: element });
@@ -49,4 +49,13 @@ test('reveals once, preserves existing transforms, and cancels on reduced motion
       if (value === undefined) delete globalThis[key]; else globalThis[key] = value;
     }
   }
+});
+
+test('only whole text elements are registered, excluding controls, images and dynamic slider products', () => {
+  const selectors = [revealHeadings, revealDescriptions, revealLabels, revealHero].join(',');
+  for (const forbidden of ['.product-card', '.handmade-item,', '.care-group', '.life-products', '.hero-actions', '.benefits', '.terra-gallery', '.newsletter-collage', 'button', 'img', '.newsletter-form', '.business-actions']) {
+    assert.equal(selectors.includes(forbidden), false, forbidden);
+  }
+  assert.ok(revealHeadings.includes('#life-title'));
+  assert.ok(revealDescriptions.includes('.care-contact > p'));
 });
