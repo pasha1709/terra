@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="newsletter.css">
   <link rel="stylesheet" href="display-typography.css">
   <link rel="stylesheet" href="reveal.css">
+  <link rel="stylesheet" href="footer.css">
   <link rel="preload" href="assets/fonts/caveat-regular.ttf" as="font" type="font/ttf" crossorigin>
   <script type="module" src="app.js"></script>
   <script type="module" src="collections-gallery.js"></script>
@@ -26,6 +27,7 @@
   <script type="module" src="business.js"></script>
   <script type="module" src="newsletter.js"></script>
   <script type="module" src="reveal.js"></script>
+  <script type="module" src="footer.js"></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -290,6 +292,40 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer" aria-label="TERRA — информация и ссылки">
+    <div class="footer-top-row">
+      <a class="brand footer-brand" href="./" aria-label="TERRA — на главную"><span class="brand-name">TERRA</span></a>
+      <p class="footer-motto">Красота в простых ритуалах</p>
+      <a class="footer-to-top" href="#main" aria-label="Наверх, к началу страницы"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V3M5 10l7-7 7 7"/></svg></a>
+    </div>
+    <nav class="footer-columns" aria-label="Информация для покупателей">
+      <section class="footer-column" data-footer-column="catalog" hidden>
+        <h2>Каталог</h2>
+        <ul data-footer-links="catalog"></ul>
+      </section>
+      <section class="footer-column" data-footer-column="atelier">
+        <h2>О мастерской</h2>
+        <ul data-footer-links="atelier"><li><a href="#handmade">Материалы</a></li></ul>
+      </section>
+      <section class="footer-column" data-footer-column="customers">
+        <h2>Покупателям</h2>
+        <ul>
+          <li><a href="#care-delivery-title" data-footer-answers="care-order-accordion-payment-trigger care-delivery-accordion-delivery-trigger">Доставка и оплата</a></li>
+          <li><a href="#care-delivery-title" data-footer-answers="care-delivery-accordion-returns-trigger">Возврат</a></li>
+          <li><a href="#care-aftercare-title" data-footer-answers="care-aftercare-accordion-care-trigger">Уход за керамикой</a></li>
+        </ul>
+      </section>
+      <section class="footer-column" data-footer-column="contacts" hidden>
+        <h2>Контакты</h2>
+        <ul data-footer-links="contacts"></ul>
+      </section>
+    </nav>
+    <div class="footer-bottom-row">
+      <p>© TERRA, <span data-footer-year>2026</span></p>
+      <a data-footer-policy hidden>Политика конфиденциальности</a>
+    </div>
+  </footer>
 
   <dialog id="business-dialog" class="business-dialog" aria-labelledby="business-dialog-title">
     <button class="business-dialog-close" type="button" data-business-close aria-label="Закрыть форму"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
