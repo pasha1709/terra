@@ -5,7 +5,7 @@ import { integrations } from '../integrations.js';
 
 test('footer omits missing destinations and rejects placeholder and executable URLs', () => {
   const result = footerDestinations(integrations);
-  for (const group of ['catalog', 'atelier', 'contacts']) {
+  for (const group of ['catalog']) {
     assert.ok(result[group].every(([, url]) => !result.valid(url)));
   }
   for (const url of ['#', '', 'javascript:alert(1)', '//unknown.example', null]) assert.equal(result.valid(url), null);

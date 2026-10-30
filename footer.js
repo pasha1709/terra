@@ -5,8 +5,7 @@ export function footerDestinations(settings) {
   const valid = value => typeof value === 'string' && /^(https?:\/\/|mailto:|tel:|\/(?!\/)|\.\.?\/)/i.test(value.trim()) ? value.trim() : null;
   return {
     catalog: [['Вазы', settings.categoryVases], ['Посуда', settings.categoryTableware], ['Декор', settings.categoryDecor]],
-    atelier: [['Наша история', settings.atelier], ['Блог', settings.blog]],
-    contacts: [['Написать нам ↗', settings.contact], ['Telegram ↗', settings.telegram], ['VK ↗', settings.vk]],
+    catalogue: valid(settings.catalog),
     policy: valid(settings.newsletter?.privacyUrl) || valid(settings.business?.privacyUrl),
     valid,
   };
@@ -15,7 +14,8 @@ export function footerDestinations(settings) {
 export function mountFooter(root, settings = integrations) {
   const destinations = footerDestinations(settings);
   root.querySelector('[data-footer-year]').textContent = String(new Date().getFullYear());
-  for (const group of ['catalog', 'atelier', 'contacts']) {
+  if (destinations.catalogue) root.querySelector('[data-footer-catalog]').href = destinations.catalogue;
+  for (const group of ['catalog']) {
     const list = root.querySelector(`[data-footer-links="${group}"]`);
     for (const [label, destination] of destinations[group]) {
       const href = destinations.valid(destination);

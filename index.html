@@ -294,15 +294,16 @@
   </main>
 
   <footer class="site-footer" aria-label="TERRA — информация и ссылки">
-    <div class="footer-top-row">
-      <a class="brand footer-brand" href="./" aria-label="TERRA — на главную"><span class="brand-name">TERRA</span></a>
-      <p class="footer-motto">Красота в простых ритуалах</p>
-      <a class="footer-to-top" href="#main" aria-label="Наверх, к началу страницы"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V3M5 10l7-7 7 7"/></svg></a>
-    </div>
-    <nav class="footer-columns" aria-label="Информация для покупателей">
-      <section class="footer-column" data-footer-column="catalog" hidden>
+    <div class="footer-main">
+      <div class="footer-identity">
+        <a class="brand footer-brand" href="./" aria-label="TERRA — на главную"><span class="brand-name">TERRA</span></a>
+        <p class="footer-motto">Красота в простых ритуалах</p>
+        <span class="footer-accent" aria-hidden="true"></span>
+      </div>
+      <nav class="footer-columns" aria-label="Информация для покупателей">
+      <section class="footer-column" data-footer-column="catalog">
         <h2>Каталог</h2>
-        <ul data-footer-links="catalog"></ul>
+        <ul data-footer-links="catalog"><li><a data-footer-catalog href="#collections">Все предметы</a></li></ul>
       </section>
       <section class="footer-column" data-footer-column="atelier">
         <h2>О мастерской</h2>
@@ -316,11 +317,9 @@
           <li><a href="#care-aftercare-title" data-footer-answers="care-aftercare-accordion-care-trigger">Уход за керамикой</a></li>
         </ul>
       </section>
-      <section class="footer-column" data-footer-column="contacts" hidden>
-        <h2>Контакты</h2>
-        <ul data-footer-links="contacts"></ul>
-      </section>
-    </nav>
+      </nav>
+      <a class="footer-to-top" href="#main" aria-label="Наверх, к началу страницы"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V3M5 10l7-7 7 7"/></svg></a>
+    </div>
     <div class="footer-bottom-row">
       <p>© TERRA, <span data-footer-year>2026</span></p>
       <a data-footer-policy hidden>Политика конфиденциальности</a>
